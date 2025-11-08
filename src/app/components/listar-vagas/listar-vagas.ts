@@ -57,6 +57,7 @@ export class ListarVagas {
       next: respostaReq => {
         alert('Vaga Excluida!')
         console.log('Vaga excluida!')
+        this.arrayVagas.update(array => array.filter(vaga => vaga.id !== idVaga))
       },
       error: erro => {
         console.log(erro  )

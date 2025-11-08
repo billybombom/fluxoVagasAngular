@@ -10,12 +10,12 @@ import { consumerMarkDirty } from '@angular/core/primitives/signals';
   styleUrl: './listar-departamentos.scss',
 })
 export class ListarDepartamentos {
-  constructor(private serviceDepartamentos: ListarDepartamentosService){}
-  ngOnInit(){
+  constructor(private serviceDepartamentos: ListarDepartamentosService) { }
+  ngOnInit() {
     this.listarDepartamentos()
   }
   arrayDepartamentos: WritableSignal<Departamentos[]> = signal([])
-  listarDepartamentos():void{
+  listarDepartamentos(): void {
     this.serviceDepartamentos.getDepartamentos().subscribe({
       next: respostaReq => {
         console.log(respostaReq)
@@ -27,11 +27,13 @@ export class ListarDepartamentos {
     })
   }
 
-  excluirDepartamento(idDerp: string){
+  excluirDepartamento(idDerp: string) {
     this.serviceDepartamentos.deleteDepartamento(idDerp).subscribe({
       next: respostaReq => {
-        console.log('Departamento excluido')
         alert('Departamento Excluido')
+        console.log('Departamento excluido')
+        this.arrayDepartamentos.update(array => array.filter(departamento => departamento.id !== idDerp))
+
       },
       error: erro => {
         console.log()

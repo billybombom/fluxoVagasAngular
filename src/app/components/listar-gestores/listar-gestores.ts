@@ -49,8 +49,8 @@ export class ListarGestores {
   deletarGestor(idGestor: string):void{
     this.serviceGestores.deleteGestor(idGestor).subscribe({
       next: resposta => {
-        console.log('Gestor excluido!')
         alert('Gestor Excluido!')
+        this.arrayGestores.update(array => array.filter(gestor => gestor.id !== idGestor))
       },
       error: erro => {
         console.log(erro)
