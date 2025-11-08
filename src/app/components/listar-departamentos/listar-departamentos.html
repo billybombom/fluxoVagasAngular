@@ -1,0 +1,29 @@
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<body>
+    <h1>Departamentos</h1>
+    <table class="table table-striped table-hover w-75 text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOME</th>
+                <th>EDITAR</th>
+                <th>EXCLUIR</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(departamento of arrayDepartamentos(); track $index){
+                <tr>
+                    <td>{{departamento.id}}</td>
+                    <td>{{departamento.departamento}}</td>
+                    <td>
+                        <button class="btn btn-info">EDITAR</button>
+                    </td>
+                    <td>
+                        <button (click)="excluirDepartamento(departamento.id)" class="btn btn-danger">EXCLUIR</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

@@ -1,0 +1,33 @@
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <h1 class="text-center">Gestores</h1>
+    <table class="table table-striped table-hover w-75 text-center">
+        <thead>
+            <tr>
+                <th>NOME</th>
+                <th>EMAIL</th>
+                <th>CARGO</th>
+                <th>DEPARTAMENTO</th>
+                <th>EDITAR</th>
+                <th>EXCLUIR</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(gestor of arrayGestores(); track $index){
+            <tr>
+                <td>{{gestor.nome}}</td>
+                <td>{{gestor.email}}</td>
+                <td>{{gestor.cargo}}</td>
+                <td>{{encontrarDepartamento(gestor.departamentoId)}}</td>
+                <td>
+                    <button class="btn btn-info">EDITAR</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger">EXCLUIR</button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
