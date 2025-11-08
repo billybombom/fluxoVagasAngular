@@ -3,10 +3,11 @@ import { ListarGestoresService } from '../../services/listar-gestores-service';
 import { Gestores } from '../../models/gestores';
 import { ListarDepartamentosService } from '../../services/listar-departamentos-service';
 import { Departamentos } from '../../models/departamentos';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-listar-gestores',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './listar-gestores.html',
   styleUrl: './listar-gestores.scss',
 })

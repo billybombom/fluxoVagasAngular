@@ -2,10 +2,11 @@ import { Component, signal, WritableSignal } from '@angular/core';
 import { ListarDepartamentosService } from '../../services/listar-departamentos-service';
 import { Departamentos } from '../../models/departamentos';
 import { consumerMarkDirty } from '@angular/core/primitives/signals';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-listar-departamentos',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './listar-departamentos.html',
   styleUrl: './listar-departamentos.scss',
 })

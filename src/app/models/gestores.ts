@@ -5,3 +5,5 @@ export interface Gestores {
     cargo: string
     departamentoId: string
 }
+
+export type GestoresParaCriar = Omit<Gestores,'id'>

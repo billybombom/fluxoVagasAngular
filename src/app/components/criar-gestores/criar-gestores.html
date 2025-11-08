@@ -1,0 +1,16 @@
+<form [formGroup]="formulario" (ngSubmit)="criarGestor()">
+    <label>Nome</label>
+    <input type="text" formControlName="nome">
+    <label>Email</label>
+    <input type="text" formControlName="email">
+    <label>Cargo</label>
+    <input type="text" formControlName="cargo">
+    <select formControlName="departamentoId">
+        <option value="">Escolha</option>
+        @for(derp of arrayDepartamentos(); track $index){
+            <option value="{{derp.id}}">{{derp.departamento}}</option>
+        }
+    </select>
+    <button type="submit">Criar Gestor</button>
+
+</form>

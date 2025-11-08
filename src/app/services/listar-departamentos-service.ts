@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Departamentos } from '../models/departamentos';
+import { DepartamentoCriar, Departamentos } from '../models/departamentos';
 import { Observable } from 'rxjs';
-import { identifierName } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root',
@@ -15,5 +14,8 @@ export class ListarDepartamentosService {
   }
   deleteDepartamento(idDerp: string): Observable<Departamentos[]>{
     return this.http.delete<Departamentos[]>(this.urlBase + `/${idDerp}`)
+  }
+  criarDepartamento(dep: DepartamentoCriar): Observable<Departamentos> {
+    return this.http.post<Departamentos>(this.urlBase,dep);
   }
 }

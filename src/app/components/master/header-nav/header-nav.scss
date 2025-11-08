@@ -1,0 +1,29 @@
+header{
+    display: flex;
+    border-bottom: 0.4px solid black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+
+    ul{
+        display: flex;
+        gap: 3em;
+        padding: 0;
+        margin: 0;
+    }
+
+    li{
+        list-style: none;
+        cursor: pointer;
+    }
+}
+
+.gestoresAtivo{
+    color: green;
+}
+.departamentosAtivo{
+    color: green;
+}
+.vagasAtivo{
+    color: green;
+}
